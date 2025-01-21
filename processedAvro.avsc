@@ -1,0 +1,91 @@
+{
+  "name": "main",
+  "type": "record",
+  "fields": [
+    {
+      "type": "string",
+      "name": "name"
+    },
+    {
+      "type": "long",
+      "name": "age"
+    },
+    {
+      "name": "address1",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "fields": [
+            {
+              "type": [
+                "null",
+                "string"
+              ],
+              "name": "street1",
+              "default": null
+            },
+            {
+              "name": "street2",
+              "type": [
+                "null",
+                {
+                  "type": "record",
+                  "fields": [
+                    {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "name": "street2",
+                      "default": null
+                    },
+                    {
+                      "name": "address3",
+                      "type": [
+                        "null",
+                        {
+                          "type": "record",
+                          "fields": [
+                            {
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "name": "street3",
+                              "default": null
+                            }
+                          ],
+                          "name": "address3_record",
+                          "namespace": "com.au.commbank.address1.street2"
+                        }
+                      ],
+                      "default": null
+                    }
+                  ],
+                  "name": "record",
+                  "namespace": "com.au.commbank.address1.street2"
+                }
+              ],
+              "default": null
+            }
+          ],
+          "name": "address1_record"
+        }
+      ],
+      "default": null
+    },
+    {
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "string"
+        }
+      ],
+      "name": "hobbies",
+      "default": null
+    }
+  ],
+  "namespace": "com.au.commbank"
+}
